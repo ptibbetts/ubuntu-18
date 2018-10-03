@@ -1,54 +1,10 @@
 # Ubuntu
 
-## PHP
+I've recently switched to using Ubuntu for web development.
 
-7.2
+This project will setup Ubuntu 18.04 with some essential apps for me to use.
 
-```
-sudo apt-get install python-software-properties
-sudo add-apt-repository ppa:ondrej/php
-sudo apt-get update
-sudo apt-get install -y php7.2
-```
-
-Composer
-
-```
-#!/bin/sh
-
-EXPECTED_SIGNATURE="$(wget -q -O - https://composer.github.io/installer.sig)"
-php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-ACTUAL_SIGNATURE="$(php -r "echo hash_file('SHA384', 'composer-setup.php');")"
-
-if [ "$EXPECTED_SIGNATURE" != "$ACTUAL_SIGNATURE" ]
-then
-    >&2 echo 'ERROR: Invalid installer signature'
-    rm composer-setup.php
-    exit 1
-fi
-
-php composer-setup.php --quiet
-RESULT=$?
-rm composer-setup.php
-exit $RESULT
-```
-
-## Node.js
-
-```
-wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-```
-
-Had to manually add 
-
-```
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-```
-
-`nvm install stable`
-
-`nvm use stable`
+A seperate script will set it up for web development.
 
 ## Code
 
