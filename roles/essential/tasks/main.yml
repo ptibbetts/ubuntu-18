@@ -30,4 +30,6 @@
 
 - include: audio.yml
 
+- include: wifi.yml
+
 - include: zsh.yml
