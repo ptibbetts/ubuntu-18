@@ -1,15 +1,4 @@
 ---
-- name: Install Dracula theme for Hyper terminal
-  command: "/usr/local/bin/hyper install hyper-dracula" 
-  register: dracula_for_hyper_installed
-  changed_when: "'is already installed' is not in dracula_for_hyper_installed"
-
-- name: Install vim plugins
-  command: "vim -E -s -c \"source ~/.vimrc\" -c PlugInstall -c qa"
-  register: install_vim_plugins_result
-  changed_when: install_vim_plugins_result.rc != 1
-  failed_when: install_vim_plugins_result.rc != 1
-
 - name: Install VLC
   command: snap install vlc
   become: yes
