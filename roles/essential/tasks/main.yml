@@ -1,0 +1,33 @@
+---
+- name: Set hostname
+  shell: hostname {{ hostname }}
+  become: yes
+  register: hostname_set
+
+- name: Update APT cache
+  apt: update_cache=yes
+  become: yes
+
+- name: Ensure system packages are installed
+  apt: 
+    name: "{{ item }}" 
+    state: latest
+  with_items:
+    - ubuntu-restricted-extras
+    - ubuntu-restricted-addons
+    - git-core
+    - curl
+    - wget
+    - htop
+    - unzip
+    # - build-essential
+    # - gcc
+    - openssl
+    - vim
+  become: yes
+
+- include: graphics.yml
+
+- include: audio.yml
+
+- include: zsh.yml

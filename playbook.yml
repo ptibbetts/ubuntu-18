@@ -1,0 +1,5 @@
+---
+- hosts: localhost
+  roles:
+    - { role: essential, tags: [ essential ] }
+    - { role: apps, tags: [ apps ] }

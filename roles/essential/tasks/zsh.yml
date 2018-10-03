@@ -1,0 +1,15 @@
+---
+- name: Ensure ZSH installed
+  apt: 
+    name: zsh 
+    state: latest
+  become: yes
+
+- name: Get ZSH
+  shell: creates="/home/{{ ansible_ssh_user }}/.oh-my-zsh" su - {{ ansible_ssh_user }} -c 'wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sed -n '/chsh/!p' | zsh'
+  become: yes
+
+- name: Change to ZSH
+  shell: chsh {{ ansible_ssh_user }} -s $(which zsh)
+  ignore_errors: yes
+  become: yes
