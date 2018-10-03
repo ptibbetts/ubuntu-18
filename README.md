@@ -6,17 +6,18 @@ This project will setup Ubuntu 18.04 with some essential apps for me to use.
 
 A seperate script will set it up for web development.
 
-## Code
+## Installation
 
-I had to increase the number of files that can be watched: https://code.visualstudio.com/docs/setup/linux#_visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc
+```
+sh -c "$(curl -fsSL https://github.com/ptibbetts/Ubuntu/raw/master/install.sh)"
+```
 
-added `fs.inotify.max_user_watches=524288` to the end of the `/etc/sysctl.conf` file and applied with `sudo sysctl -p`. 
+## Manual Steps
 
-## Git
+### 1Password X
 
-Installed GitKraken as it seems to have more features than Giggle.
+Download the extension from [here](https://1password.com/downloads/).
 
-## Terminal
+### Pocket
 
-Installed Hyper as it seems newer than any typical "Linux" terminal.
-
+Login to Firefox's Pocket extension.

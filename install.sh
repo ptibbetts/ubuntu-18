@@ -2,8 +2,8 @@
 
 # Variables
 user="${USER}"
-repo="https://github.com/ptibbetts/ubuntu.git"
-install="$HOME/.ubuntu"
+repo="https://github.com/ptibbetts/Ubuntu.git"
+install="$HOME/.Ubuntu"
 
 # Text formatting
 bold=$(tput bold)
